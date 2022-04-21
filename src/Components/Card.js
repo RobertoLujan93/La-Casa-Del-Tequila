@@ -1,15 +1,13 @@
 import imagen1 from "./imagenes/tequila-milagro.webp"
+import ItemCount from "./ItemCount";
 
 function Card() {
   return (
-<div class="card card-compact w-96 bg-base-100 shadow-xl">
+<div className="card card-compact w-96 bg-base-100 shadow-xl">
   <figure><img src={imagen1} alt="Shoes" /></figure>
-  <div class="card-body">
-    <h2 class="card-title">Tequila Milagro Reposado</h2>
-    <p></p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Comprar</button>
-    </div>
+  <div className="card-body">
+    <h2 className="text-center font-bold text-xl">Tequila Milagro Reposado</h2>
+    <ItemCount stock = "10" initial = "1"/>
   </div>
 </div>
   );

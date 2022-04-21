@@ -1,12 +1,12 @@
 import './App.css';
 import Navbar from './Components/Navbar';
-import Productos from './Components/Productos';
+import ItemListContainer from './Components/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Productos/>
+      <ItemListContainer greetings = "Bievenido a La Casa del Tequila"/>
     </div>
   );
 }
