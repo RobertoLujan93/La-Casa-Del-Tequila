@@ -1,12 +1,15 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
+import { useParams } from "react-router-dom";
 import Item from "./Item";
 import { tequilasData } from "../data/tequilasData";
 
 const ItemList = () => {
 
+  const {categoryId} = useParams()
   const [tequilas, setTequilas] = useState([]);
 
   useEffect(() => {
+    getFilteredList();
     getTequilas()
   }, []);
 
@@ -22,9 +25,18 @@ const ItemList = () => {
     });
   }
 
+  const getFilteredList = () => {
+    if (!categoryId) {
+      return tequilas;
+    }
+    return tequilasData.filter((t) => t.category === categoryId);
+  }
+  let filteredList = useMemo(getFilteredList, [categoryId, tequilas]);
+
+
   return (
     <div className="w-full mx-auto flex flex-wrap justify-center gap-10">
-      {tequilas.map ( i => <Item key={i.id} item={i} /> )}
+      {filteredList.map ( i => <Item key={i.id} item={i} /> )}
     </div>
   );
 };

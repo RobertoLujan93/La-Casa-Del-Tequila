@@ -1,4 +1,3 @@
-import Item from "./Item"
 import ItemList from "./ItemList"
 
 function ItemListContainer(props) {
