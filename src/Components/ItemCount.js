@@ -2,6 +2,7 @@ import { useState } from "react";
 
 const ItemCount = ({ stock, initial, onAdd }) => {
   const [count, setCount] = useState(initial);
+  
   const resHandler = () => {
     if (count > initial) {
       setCount(count - 1);
