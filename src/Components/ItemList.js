@@ -9,9 +9,8 @@ const ItemList = () => {
   const [tequilas, setTequilas] = useState([]);
 
   useEffect(() => {
-    getFilteredList();
     getTequilas()
-  }, []);
+  }, [categoryId]);
 
   const getTequilas = () => {
     const promesa = new Promise((resolve) => {
@@ -20,23 +19,18 @@ const ItemList = () => {
       }, 2000);
     });
 
-    promesa.then((data) => {
-      setTequilas(data);
+    promesa.then((tequilasPromise) => {
+      if (!categoryId) {
+        setTequilas(tequilasPromise);
+      } else {
+      setTequilas(tequilasPromise.filter((t) => t.category === categoryId));
+      }
     });
   }
 
-  const getFilteredList = () => {
-    if (!categoryId) {
-      return tequilas;
-    }
-    return tequilasData.filter((t) => t.category === categoryId);
-  }
-  let filteredList = useMemo(getFilteredList, [categoryId, tequilas]);
-
-
   return (
     <div className="w-full mx-auto flex flex-wrap justify-center gap-10">
-      {filteredList.map ( i => <Item key={i.id} item={i} /> )}
+      {tequilas.map ( i => <Item key={i.id} item={i} /> )}
     </div>
   );
 };
