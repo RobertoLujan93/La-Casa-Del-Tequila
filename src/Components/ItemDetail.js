@@ -34,7 +34,7 @@ const ItemDetail = () => {
             Terminar Compra
           </Link>
         ) : (
-        <ItemCount stock = {tequila.stock} initial = {1} onAdd= {onAdd}/>
+        <ItemCount stock = {tequila.stock} initial = {1} onAdd= {onAdd} id={tequilaId}/>
         )}
       </div>
     </div>
