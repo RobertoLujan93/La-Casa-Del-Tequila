@@ -23,7 +23,7 @@ const CartContextProvider = ({children}) => {
 		setCart ([...newCart,producto])
 	}
 
-	// Borar item del carrito
+	// Borrar item del carrito
 	const removeItem = (producto) => {
 		const newCart = [...cart]
 
@@ -40,7 +40,7 @@ const CartContextProvider = ({children}) => {
 
 	console.log (cart)
 
-  return <CartContext.Provider 
+    return <CartContext.Provider 
 	value={{cart, addItem, removeItem, clearCart, setCart}}>
 		{children}
 	</CartContext.Provider>
