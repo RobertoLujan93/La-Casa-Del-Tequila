@@ -16,18 +16,18 @@ const AppContextProvider = ({children}) => {
     const promesa = new Promise((resolve) => {
       setTimeout(() => {
         resolve(tequilasData);
-      }, 2000);
-    });
+      }, 2000)
+    })
 
     promesa.then((data) => {
-      setTequilas(data);
-    });
+      setTequilas(data)
+    })
   }
 
   return <AppContext.Provider 
 	value= {{tequilas}}>
 		{children}
 	</AppContext.Provider>
-};
+}
 
 export default AppContextProvider;

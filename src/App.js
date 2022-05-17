@@ -1,8 +1,9 @@
 import './App.css';
+import {BrowserRouter, Routes, Route} from "react-router-dom"
 import Navbar from './Components/Navbar';
 import ItemListContainer from './Components/ItemListContainer';
-import {BrowserRouter, Routes, Route} from "react-router-dom"
-import ItemDetailContainer from './Components/ItemDetail';
+import ItemDetailContainer from './Components/ItemDetailContainer';
+import Cart from "./Components/Cart";
 import CartContextProvider from './Components/context/CartContext';
 import AppContextProvider from './Components/context/AppContext';
 
@@ -15,7 +16,8 @@ function App() {
       <Routes>
         <Route path='/' element= {<ItemListContainer greetings = "Bievenido a La Casa del Tequila"/>}/>
         <Route path='/tequilas/:categoryId' element={ <ItemListContainer/> } />
-        <Route path='/tequila/:tequilaId' element={ <ItemDetailContainer/> } />    
+        <Route path='/tequila/:tequilaId' element={ <ItemDetailContainer/> } />
+        <Route path="/cart" element={<Cart/>} />    
       </Routes>
       </BrowserRouter>
     </CartContextProvider>
