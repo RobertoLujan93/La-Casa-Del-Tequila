@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { tequilasData } from "../data/tequilasData";
 import ItemDetail from "./ItemDetail";
+import {doc, getDoc, getFirestore} from "firebase/firestore"
 
 const ItemDetailContainer = () => {
 
@@ -9,20 +9,15 @@ const ItemDetailContainer = () => {
   const {tequilaId} = useParams();
 
   useEffect(() => {
-    getTequilas()
-  }, [tequilaId]);
+    const db = getFirestore()
 
-  const getTequilas = () => {
-    const promesa = new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(tequilasData);
-      }, 2000);
-    });
-
-    promesa.then((data) => {
-      setTequila(data.find((t) => t.id == tequilaId));
-    });
-  }
+    const item = doc(db, "items", tequilaId)
+    getDoc(item).then (snapshot => {
+      if (snapshot.exists()) {
+        setTequila ({id:snapshot.id, ...snapshot.data()})
+      }
+    })
+  }, [tequilaId])
 
 	return (
     <div className="w-full mx-auto flex flex-wrap justify-center gap-10">
