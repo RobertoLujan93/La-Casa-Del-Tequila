@@ -31,7 +31,7 @@ const CartContextProvider = ({children}) => {
 		if (!productoIsInCart) {
 			return
 		}
-		const deleteProduct = newCart.filter((producto) => producto.id !==producto.id)
+		const deleteProduct = newCart.filter((item) => item.id !==producto.id)
 		setCart (deleteProduct)
 	}
 
