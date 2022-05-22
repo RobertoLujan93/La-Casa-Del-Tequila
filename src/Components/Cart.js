@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import CartOrder from "./CartOrder";
 import { useCartContext } from "./context/CartContext";
 
 const Cart = () => {
@@ -9,12 +10,15 @@ const Cart = () => {
   return <div className="container mx-auto">
 		<h1 className="text-white text-center text-5xl p-4 mb-6">Carrito de compras</h1>
     {cart.map((item) => (
-        <div key={item.id} className="flex flex-row p-4 items-center justify-center gap-4">
-          <img src={item.pictureUrl}  alt={item.title} />
-          <div>
+        <div key={item.id} className="mx-auto w-full md:w-7/12 lg:w-5/12 flex flex-col md:flex-row p-4 items-center gap-4">
+          <img src={item.pictureUrl} className="w-52" alt={item.title} />
+          <div className="text-center lg:text-left">
             <h2 className="text-white text-xl">{item.title}</h2>
             <p className="text-white text-xl"><span>Cantidad: </span>{item.quantity}</p>
-						<button className="btn mt-12 text-black bg-red-600 hover:text-black hover:bg-white" onClick={()=>removeItem(item)}>Eliminar</button>
+            <p className="text-white text-xl"><span>Subtotal: $</span>{item.price*item.quantity}</p>
+            <div className="flex justify-center lg:justify-start">
+						<button className="btn mt-8 text-black bg-red-600 hover:text-black hover:bg-white" onClick={()=>removeItem(item)}>Eliminar</button>
+            </div>
           </div>
         </div>
       ))} 
@@ -31,6 +35,7 @@ const Cart = () => {
         <button className="btn mt-10 text-black bg-red-600 hover:text-black hover:bg-white" onClick={clearCart}>
           Vaciar carrito
         </button>
+        <CartOrder/>
       </div>
       </>
       )
