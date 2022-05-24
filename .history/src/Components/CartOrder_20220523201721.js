@@ -10,7 +10,7 @@ const CartOrder = () => {
       phone: "+525524674528",
       email: "toro27@gmail.com",
     };
-    const cartFiltered = cart.map(({ id, title, quantity }) => ({ id, title, quantity }));
+    const cartFiltered = cart.map(({ id, title }) => ({ id, title }));
     const orderToSave = {
       buyer: buyer,
       items: cartFiltered,
@@ -25,7 +25,8 @@ const CartOrder = () => {
   };
 
 	const updateOrder = async () => {
-		const docId = "pP7qQWTMMMd1PkbsxVyF"
+		const docId = "
+    =pP7qQWTMMMd1PkbsxVyF"
 
 		const db = getFirestore();
 		const orderDoc = doc (db,"orders", docId)

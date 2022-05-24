@@ -16,7 +16,7 @@ const Navbar = () => {
     <li className="list-none"><Link to = "/tequilas/añejos">Tequilas Añejos</Link></li>
   </div>
   <div className="flex-none">
-    {cart.length>0?<CartWidget/>:<h1 className="hidden">Mensaje oculto</h1>}
+    {cart.length>0?<CartWidget/>:<h1 className="hidden"></h1>}
   </div>
 </div>
 	)}

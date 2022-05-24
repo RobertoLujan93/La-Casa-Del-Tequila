@@ -10,7 +10,7 @@ const CartOrder = () => {
       phone: "+525524674528",
       email: "toro27@gmail.com",
     };
-    const cartFiltered = cart.map(({ id, title, quantity }) => ({ id, title, quantity }));
+    const cartFiltered = cart.map(({ id, title }) => ({ id, title }));
     const orderToSave = {
       buyer: buyer,
       items: cartFiltered,

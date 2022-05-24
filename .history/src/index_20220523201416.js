@@ -10,7 +10,7 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_PROJECTID,
   storageBucket: process.env.REACT_APP_STORAGEBUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_APPID
+  appId: "1:481066354877:web:fda74f9355642631118fd4"
 };
 
 initializeApp(firebaseConfig);
