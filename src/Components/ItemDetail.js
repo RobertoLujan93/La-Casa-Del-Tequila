@@ -16,23 +16,27 @@ const ItemDetail = (props) => {
   };
 
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img src={pictureUrl} alt="Imagen de Tequila" />
-      </figure>
-      <div className="card-body">
-        <h2 className="text-center text-xl">{title}</h2>
-        <h4 className="text-center font-bold text-xl">${price}</h4>
-				<h4 className="text-center text-xl">{description}</h4>
-        {terminar ? (
-          <Link to="/cart" className="btn mx-32 mt-4 text-white bg-black hover:text-black hover:bg-white">
-            Terminar Compra
-          </Link>
-        ) : (
-        <ItemCount stock = {stock} initial = {1} onAdd= {onAdd}/>
-        )}
-      </div>
+    <section className="product">
+    <div className="product__photo">
+          <img src={pictureUrl} alt="imagen de tequila"/>
     </div>
+    <div className="product__info">
+      <div className="title">
+      <h2 className="">{title}</h2>
+      </div>
+      <div className="price">
+      <h4 className="font-bold text-xl text-zinc-900">${price}</h4>
+      </div>
+      <h4 className="py-3 text-base text-zinc-900">{description}</h4>
+      {terminar ? (
+    <Link to="/cart" className="btn rounded my-2 mx-14 text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white">
+      Terminar Compra
+    </Link>
+  ) : (
+  <ItemCount stock = {stock} initial = {1} onAdd= {onAdd}/>
+  )}
+    </div>
+  </section>
   );
 };
 

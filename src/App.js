@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
       <Navbar/>
       <Routes>
-        <Route path='/' element= {<ItemListContainer greetings = "Bievenido a La Casa del Tequila"/>}/>
+        <Route path='/' element= {<ItemListContainer/>}/>
         <Route path='/tequilas/:categoryId' element={ <ItemListContainer/> } />
         <Route path='/tequila/:tequilaId' element={ <ItemDetailContainer/> } />
         <Route path="/cart" element={<Cart/>} />    

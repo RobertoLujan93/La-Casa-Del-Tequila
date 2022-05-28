@@ -1,4 +1,75 @@
-.card:hover{
-    box-shadow: 0 5px 15px yellow;
+.card:hover {
+    box-shadow: 0 5px 15px #ffff00;
     transform: translateY(-15px);
 }
+
+/* Effecto links navbar */
+.effect {
+    color: #212121;
+    position: relative;
+    text-decoration: none;
+}
+
+.effect::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #212121;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+}
+
+.effect:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .effect::before {
+        width: 40%;
+    }
+    .effect3 {
+        margin-bottom: 20px;
+    }
+}
+
+/* Estilos Item Detail */
+
+/* ----- Product Section ----- */
+.product {
+    width:50%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	margin: auto;
+	background-color: white;
+	border-radius: 5px;
+    margin-bottom: 1.75rem;
+}
+
+@media only screen and (min-width: 0px) and (max-width: 767px) {
+    .product {
+        width:80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.product img {
+    max-height: 17rem;
+}
+/* ----- Informations Section ----- */
+.product__info {
+	padding: 0.8em;
+}
+
+	.title h2 {
+		margin-bottom: 0.7em;;
+		font-size: 1.25em;
+		font-weight: 700;
+	}
