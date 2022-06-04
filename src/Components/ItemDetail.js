@@ -16,9 +16,9 @@ const ItemDetail = (props) => {
   };
 
   return (
-    <section className="product">
+    <section className="product rounded-md">
     <div className="product__photo">
-          <img src={pictureUrl} alt="imagen de tequila"/>
+          <img src={pictureUrl} alt="imagen de tequila" className="rounded-tl-md"/>
     </div>
     <div className="product__info">
       <div className="title">

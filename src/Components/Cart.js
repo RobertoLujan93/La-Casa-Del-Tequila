@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import CartOrder from "./CartOrder";
 import { useCartContext } from "./context/CartContext";
 
 const Cart = () => {
@@ -35,7 +34,7 @@ const Cart = () => {
         <button className="btn mt-10 text-black bg-red-600 hover:text-black hover:bg-white" onClick={clearCart}>
           Vaciar carrito
         </button>
-        <CartOrder/>
+        <Link to= "/checkout" className="btn mt-10 text-black bg-red-600 hover:text-black hover:bg-white">CHECKOUT</Link>
       </div>
       </>
       )
@@ -44,3 +43,5 @@ const Cart = () => {
 };
 
 export default Cart;
+
+

@@ -123,7 +123,6 @@
     }
 }
 
-
 /* Estilos Item Detail */
 .product {
     width: 50%;
@@ -131,7 +130,6 @@
     grid-template-columns: 1fr 1fr;
     margin: auto;
     background-color: white;
-    border-radius: 5px;
     margin-bottom: 1.75rem;
 }
 
@@ -154,7 +152,6 @@
 
 .title h2 {
     margin-bottom: 0.7em;
-    ;
     font-size: 1.25em;
     font-weight: 700;
 }

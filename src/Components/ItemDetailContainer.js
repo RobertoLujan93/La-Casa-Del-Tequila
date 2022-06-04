@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
   }, [tequilaId])
 
 	return (
-    <div className="w-full mx-auto flex flex-wrap justify-center gap-10">
+    <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mt-7">
       <ItemDetail tequila={tequila} />
     </div>
   );
