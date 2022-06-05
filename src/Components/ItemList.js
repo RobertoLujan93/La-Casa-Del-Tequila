@@ -25,7 +25,7 @@ const ItemList = () => {
   }, [categoryId])
 
   return (
-    <div className="w-full mx-auto flex flex-wrap justify-center gap-10">
+    <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mb-6">
       {tequilas.map ( i => <Item key={i.id} item={i} /> )}
     </div>
   );

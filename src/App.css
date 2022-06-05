@@ -87,7 +87,7 @@
 }
 
 /* ---MOBILE S--- */
-@media only screen and (min-width: 0px) and (max-width: 320px) {
+@media (min-width: 0px) and (max-width: 320px) {
     .banner h1 {
         font-size: 20px;
         width: 70%;
@@ -106,7 +106,7 @@
 }
 
 /* ---MOBILE M--- */
-@media only screen and (min-width: 321px) and (max-width: 375px) {
+@media (min-width: 321px) and (max-width: 375px) {
     .banner h1 {
         font-size: 22px;
         width: 65%;
@@ -117,6 +117,24 @@
     }
     .banner h3 {
         font-size: 17px;
+        top: 33%;
+        left: 25%;
+        width: 50%; 
+    }
+}
+
+/* ---MOBILE L--- */
+@media (min-width: 376px) and (max-width: 425px) {
+    .banner h1 {
+        font-size: 24px;
+        width: 60%;
+        top: 30%;
+    }
+    .banner h1:hover {
+        font-size: 25px;
+    }
+    .banner h3 {
+        font-size: 19px;
         top: 33%;
         left: 25%;
         width: 50%; 

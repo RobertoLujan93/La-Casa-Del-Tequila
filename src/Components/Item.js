@@ -17,7 +17,7 @@ const Item = (props) => {
         </div>
         <div className="flex justify-between items-center">
             <span className="text-xl font-bold text-zinc-900">${price}</span>
-            <Link to= {`/tequila/${id}`} className="btn px-3 py-2 text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white text-xs font-bold rounded">Ver Detalle</Link>
+            <Link to= {`/tequila/${id}`} className="btn px-3 py-2 text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white text-xs font-bold rounded transition-all duration-500">Ver Detalle</Link>
         </div>
     </div>
 </div>
