@@ -53,39 +53,39 @@ const Checkout = () => {
       <>
         <div className="flex justify-center items-center mx-auto xl:mx-auto px-10 my-6 xl:px-20 bg-white">
           <div className="flex w-full flex-col justify-center items-center">
-            <h1 className="font-medium text-lg text-zinc-900 tracking-wider leading-tight uppercase self-start mt-6 mb-6">
+            <h1 className="font-bold text-lg text-zinc-900 tracking-wider leading-tight self-start mt-6 mb-6 font-fredericka">
               Checkout
             </h1>
             <div className="flex w-full flex-col lg:flex-row justify-start items-start">
 
               <div className="flex flex-col self-start w-full md:w-1/2 mr-6">
-                <h2 className="font-medium text-xs text-zinc-900 tracking-wider leading-loose uppercase">Resumen</h2>
+                <h2 className="font-semibold text-base text-zinc-900 tracking-wider leading-loose font-fredericka">Resumen de tu compra</h2>
                 <div className="flex flex-col border border-zinc-900 p-4 mt-6">
-                  <div className="flex flex-row justify-between font-light text-sm text-zinc-900 tracking-wide leading-normal">
+                  <div className="flex flex-row justify-between font-bold text-sm text-zinc-900 tracking-wide leading-normal font-fredericka">
                     <p>Cantidad de items:</p>
                     <p>{cart.reduce((acc, item) => acc + item.quantity, 0)}</p>
                   </div>
-                  <div className="flex flex-row justify-between font-light text-sm text-zinc-900 tracking-wide leading-normal">
+                  <div className="flex flex-row justify-between font-bold text-sm text-zinc-900 tracking-wide leading-normal font-fredericka">
                     <p>Gastos de envío:</p>
                     <p>¡Envío gratis!</p>
                   </div>
-                  <div className="flex flex-row justify-between font-semibold mt-10 text-xs text-zinc-900 tracking-wider leading-loose uppercase">
+                  <div className="flex flex-row justify-between font-semibold mt-10 text-xs text-zinc-900 tracking-wider leading-loose uppercase font-fredericka">
                     <p>Total:</p>
                     <p>${cartTotal()}</p>
                   </div>
                 </div>
-                <Link to='/cart' className="font-light text-sm text-zinc-900 tracking-wide leading-normal flex flex-row items-center mt-3 lowercase">
+                <Link to='/cart' className="font-bold text-sm text-zinc-900 tracking-wide leading-normal flex flex-row items-center mt-3 lowercase font-fredericka">
                   <ArrowLeftIcon className="h-4 w-4 mr-1" />
                   Volver al carrito
                 </Link>
               </div>
 
-              <div className="flex flex-col justify-start items-start w-full mt-6 lg:mt-0 mb-3">
+              <div className="flex flex-col justify-start items-start w-full lg:ml-5 mt-6 lg:mt-0 mb-3">
 
                 <form className="space-y-6">
-                  <h2 className="font-medium text-xs text-zinc-900 tracking-wider leading-loose uppercase">Detalles de facturación</h2>
+                  <h2 className="font-bold text-base text-zinc-900 tracking-wider leading-loose font-fredericka">Favor de completar los siguientes datos para recibir la factura:</h2>
                   <input
-                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-light text-sm text-gray-600 tracking-wide leading-normal"
+                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-bold text-sm text-gray-600 tracking-wide leading-normal font-fredericka"
                     id="name"
                     type="text"
                     name="name"
@@ -94,7 +94,7 @@ const Checkout = () => {
                     placeholder="Nombre"
                   />
                   <input
-                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-light text-sm text-gray-600 tracking-wide leading-normal"
+                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-bold text-sm text-gray-600 tracking-wide leading-normal font-fredericka"
                     id="surname"
                     type="text"
                     name="surname"
@@ -103,7 +103,7 @@ const Checkout = () => {
                     placeholder="Apellido"
                   />
                   <input
-                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-light text-sm text-gray-600 tracking-wide leading-normal"
+                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-bold text-sm text-gray-600 tracking-wide leading-normal font-fredericka"
                     id="telephone"
                     type="tel"
                     name="telephone"
@@ -112,7 +112,7 @@ const Checkout = () => {
                     placeholder="Teléfono (insertar como mínimo 7 dígitos)"
                   />
                   <input
-                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-light text-sm text-gray-600 tracking-wide leading-normal"
+                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-bold text-sm text-gray-600 tracking-wide leading-normal font-fredericka"
                     id="email"
                     type="email"
                     name="email"
@@ -121,7 +121,7 @@ const Checkout = () => {
                     placeholder="E-mail"
                   />
                   <input
-                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-light text-sm text-gray-600 tracking-wide leading-normal"
+                    className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-bold text-sm text-gray-600 tracking-wide leading-normal font-fredericka"
                     id="emailConfirm"
                     type="email"
                     name="emailConfirm"
@@ -135,14 +135,14 @@ const Checkout = () => {
                     // Botón habilitado
                     <input
                       onClick={() => { saveOrder(); setShowModal(true) }}
-                      className="btn text-xs font-bold tracking-wider leading-normal uppercase select-none focus:outline-none text-white bg-zinc-900 focus:ring-transparent w-full md:w-2/4 mx-auto hover:text-zinc-900 hover:bg-white rounded transition-all duration-500 text-center py-3 cursor-pointer mt-6 mb-3"
+                      className="btn text-base font-bold tracking-wider leading-normal select-none focus:outline-none text-white bg-zinc-900 focus:ring-transparent w-full md:w-2/4 mx-auto hover:text-zinc-900 hover:bg-white rounded transition-all duration-500 text-center py-3 cursor-pointer mt-6 mb-3 font-fredericka"
                       type="submit"
                       value="Proceder al pago"
                     />
                   ) : (
                     // Botón deshabilitado
                     <input
-                      className="text-xs font-bold tracking-wider leading-normal uppercase select-none focus:outline-none rounded w-full md:w-2/4 mx-auto text-white bg-zinc-900 focus:ring-transparent text-center py-3 mt-6 mb-3"
+                      className="text-base font-bold tracking-wider leading-normal select-none focus:outline-none rounded w-full md:w-2/4 mx-auto text-white bg-zinc-900 focus:ring-transparent text-center py-3 mt-6 mb-3 font-fredericka"
                       type="submit"
                       value="Proceder al pago"
                       disabled

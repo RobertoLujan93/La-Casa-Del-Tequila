@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css';
 import App from './App';
 import {initializeApp} from "firebase/app"
+import "./Fonts/BLKCHCRY.ttf"
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,

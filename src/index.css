@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: "BLKCHCRY";
+    src: local("BLKCHCRY"),
+    url("./Fonts/BLKCHCRY.ttf") format("truetype");
+    font-weight: normal;
+}
+
 body {
-    background-color: rgb(24 24 27)
+    background-color: rgb(24 24 27);
 }

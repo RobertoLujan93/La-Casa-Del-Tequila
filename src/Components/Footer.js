@@ -3,8 +3,12 @@ const Footer = () => {
   return (
 
 <footer className="text-center bg-white text-zync-900">
-  <div className="container px-6 pt-6">
-    <div className="flex justify-center mb-2">
+  <div className="w-full pt-6">
+  <div className="text-center text-lg mb-2 text-zinc-900 font-semibold font-fredericka">
+    © 2022 Copyright: Roberto Ariel Luján Gutiérrez
+  </div>
+  <hr className="border-zinc-900 w-3/4 mx-auto" />
+    <div className="flex justify-center my-2">
       <a href="#!" type="button" className="rounded-full border-2 border-white text-white bg-zinc-900 hover:bg-white hover:border-zinc-900 hover:text-zinc-900 leading-normal uppercase w-9 h-9 m-1 transition-all duration-500">
         <svg aria-hidden="true"
         focusable="false"
@@ -38,10 +42,6 @@ const Footer = () => {
         </svg>
       </a>
     </div>
-		<hr className="border-zinc-900 mt-4" />
-  </div>
-  <div className="text-center p-4 text-zinc-900 font-semibold">
-    © 2022 Copyright: Roberto Ariel Luján Gutiérrez
   </div>
 </footer>
 )}
