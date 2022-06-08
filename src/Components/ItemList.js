@@ -4,29 +4,32 @@ import Item from "./Item";
 import { collection, getDocs, getFirestore } from "firebase/firestore";
 
 const ItemList = () => {
-  const {categoryId} = useParams()
+  const { categoryId } = useParams();
   const [tequilas, setTequilas] = useState([]);
 
   useEffect(() => {
-    const db = getFirestore()
-    const itemsCollection = collection(db, "items")
+    const db = getFirestore();
+    const itemsCollection = collection(db, "items");
 
-    getDocs (itemsCollection).then (snapshot => {
-      const tequilasList = []
-      snapshot.docs.forEach (s => {
-        tequilasList.push ({id:s.id, ...s.data()})
-      })
+    getDocs(itemsCollection).then((snapshot) => {
+      const tequilasList = [];
+      snapshot.docs.forEach((s) => {
+        tequilasList.push({ id: s.id, ...s.data() });
+      });
+      /* Filtrar por categorías */
       if (!categoryId) {
-      setTequilas (tequilasList)
+        setTequilas(tequilasList);
       } else {
         setTequilas(tequilasList.filter((t) => t.category === categoryId));
       }
-    })
-  }, [categoryId])
+    });
+  }, [categoryId]);
 
   return (
     <div className="w-full mx-auto flex flex-wrap justify-center gap-10 mb-6">
-      {tequilas.map ( i => <Item key={i.id} item={i} /> )}
+      {tequilas.map((i) => (
+        <Item key={i.id} item={i} />
+      ))}
     </div>
   );
 };

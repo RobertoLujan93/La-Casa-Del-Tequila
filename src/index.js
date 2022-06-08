@@ -1,9 +1,8 @@
-import React from 'react';
-import { createRoot } from 'react-dom/client'
-import './index.css';
-import App from './App';
-import {initializeApp} from "firebase/app"
-import "./Fonts/BLKCHCRY.ttf"
+import React from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_APIKEY,
@@ -11,14 +10,9 @@ const firebaseConfig = {
   projectId: process.env.REACT_APP_PROJECTID,
   storageBucket: process.env.REACT_APP_STORAGEBUCKET,
   messagingSenderId: process.env.REACT_APP_MESSAGINGSENDERID,
-  appId: process.env.REACT_APP_APPID
+  appId: process.env.REACT_APP_APPID,
 };
 
 initializeApp(firebaseConfig);
 
-createRoot(
-  document.getElementById('root')
-).render (
-    <App />
-);
-
+createRoot(document.getElementById("root")).render(<App />);

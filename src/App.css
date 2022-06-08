@@ -1,88 +1,52 @@
 /* Fuentes */
-.font-BLKCHCRY {
-    font-family: BLKCHCRY;
-}
 .font-fredericka {
-    font-family: 'Fredericka the Great', cursive;
+  font-family: "Fredericka the Great", cursive;
 }
 
-/* Effect cards */
+/* Effect Cards */
 .card:hover {
-    box-shadow: 0 0 0.5em #fefe22, 0 0 0.5em #ffef00, 0 0 0.5em #eee600;
-    transform: translateY(-10px);
+  box-shadow: 0 0 0.5em #fefe22, 0 0 0.5em #ffef00, 0 0 0.5em #eee600;
+  transform: translateY(-10px);
 }
 
 /* Effect Text */
 .animate {
-    text-shadow: 0 0 0.05em #fff, 0 0 0.2em snow, 0 0 0.3em #f8f8ff;
+  text-shadow: 0 0 0.05em #fff, 0 0 0.2em snow, 0 0 0.3em #f8f8ff;
 }
 
 /* Effect links navbar */
 .effect {
-    color: #212121;
-    position: relative;
-    text-decoration: none;
+  color: #212121;
+  position: relative;
+  text-decoration: none;
 }
 
 .effect::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 4px;
-    border-radius: 4px;
-    background-color: #212121;
-    bottom: 0;
-    left: 0;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .3s ease-in-out;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #212121;
+  bottom: 0;
+  left: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 0.3s ease-in-out;
 }
 
 .effect:hover::before {
-    transform-origin: left;
-    transform: scaleX(1);
+  transform-origin: left;
+  transform: scaleX(1);
 }
 
 @media only screen and (min-width: 0px) and (max-width: 767px) {
-    .effect::before {
-        width: 40%;
-        left: 30%;
-    }
+  .effect::before {
+    width: 40%;
+    left: 30%;
+  }
 
-    .effect3 {
-        margin-bottom: 20px;
-    }
-}
-
-/* Estilos Item Detail */
-.product {
-    width: 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: auto;
-    background-color: white;
-    margin-bottom: 1.75rem;
-}
-
-@media only screen and (min-width: 0px) and (max-width: 767px) {
-    .product {
-        width: 80%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.product img {
-    max-height: 17rem;
-}
-
-.product__info {
-    padding: 0.8em;
-}
-
-.title h2 {
-    margin-bottom: 0.7em;
-    font-size: 1.25em;
-    font-weight: 700;
+  .effect3 {
+    margin-bottom: 20px;
+  }
 }
