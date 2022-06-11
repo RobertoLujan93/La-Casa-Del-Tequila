@@ -137,7 +137,8 @@ const Checkout = () => {
                   onChange={inputDatos}
                   placeholder="Confirmar e-mail"
                 />
-                {buyer.name &&
+              </form>
+              {buyer.name &&
                 buyer.surname &&
                 buyer.telephone &&
                 buyer.email === buyer.emailConfirm &&
@@ -162,7 +163,6 @@ const Checkout = () => {
                     disabled
                   />
                 )}
-              </form>
             </div>
           </div>
         </div>
@@ -186,7 +186,7 @@ const Checkout = () => {
             <Link to="/" className="mt-6 flex justify-center">
               <button
                 onClick={clearCart}
-                className="btn font-medium text-xxs  leading-normal uppercase select-none text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white rounded w-40 text-center py-3 cursor-pointer transition-all duration-500"
+                className="btn font-medium text-xxs leading-normal uppercase select-none text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white rounded w-40 text-center py-3 cursor-pointer transition-all duration-500"
               >
                 Volver al inicio
               </button>
