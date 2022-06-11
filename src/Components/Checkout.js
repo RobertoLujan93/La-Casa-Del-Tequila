@@ -54,24 +54,24 @@ const Checkout = () => {
       <div className="flex justify-center items-center mx-auto xl:mx-auto px-10 my-6 xl:px-20 bg-white">
         <div className="flex w-full flex-col justify-center items-center">
           {/* Detalles de compra */}
-          <h1 className="font-bold text-lg text-zinc-900 tracking-wider leading-tight self-start mt-6 mb-6 font-fredericka">
+          <h1 className="self-center py-8 text-center text-zinc-900 underline text-xl md:text-2xl lg:text-2xl font-bold font-fredericka">
             Checkout
           </h1>
           <div className="flex w-full flex-col lg:flex-row justify-start items-start">
             <div className="flex flex-col self-start w-full md:w-1/2 mr-6">
-              <h2 className="font-semibold text-base text-zinc-900 tracking-wider leading-loose font-fredericka">
+              <h2 className="font-semibold text-base text-zinc-900 font-fredericka">
                 Resumen de tu compra
               </h2>
               <div className="flex flex-col border border-zinc-900 p-4 mt-6">
-                <div className="flex flex-row justify-between font-bold text-sm text-zinc-900 tracking-wide leading-normal font-fredericka">
-                  <p>Cantidad de items:</p>
+                <div className="flex flex-row justify-between font-bold text-sm text-zinc-900 font-fredericka">
+                  <p className="mb-3">Cantidad de productos:</p>
                   <p>{cart.reduce((acc, item) => acc + item.quantity, 0)}</p>
                 </div>
-                <div className="flex flex-row justify-between font-bold text-sm text-zinc-900 tracking-wide leading-normal font-fredericka">
-                  <p>Gastos de envío:</p>
+                <div className="flex flex-row justify-between font-bold text-sm text-zinc-900 font-fredericka">
+                  <p>Costo de envío:</p>
                   <p>¡Envío gratis!</p>
                 </div>
-                <div className="flex flex-row justify-between font-semibold mt-10 text-xs text-zinc-900 tracking-wider leading-loose uppercase font-fredericka">
+                <div className="flex flex-row justify-between font-semibold mt-10 text-base text-zinc-900 font-fredericka">
                   <p>Total:</p>
                   <p>${cartTotal()}</p>
                 </div>
@@ -86,9 +86,9 @@ const Checkout = () => {
               </Link>
             </div>
             {/* Formulario */}
-            <div className="flex flex-col justify-start items-start w-full lg:ml-5 mt-6 lg:mt-0 mb-3">
+            <div className="flex flex-col justify-start items-start w-full lg:ml-5 mt-6 lg:mt-0 mb-10">
               <form className="space-y-6">
-                <h2 className="font-bold text-base text-zinc-900 tracking-wider leading-loose font-fredericka">
+                <h2 className="font-bold text-base text-zinc-900 font-fredericka">
                   Favor de completar los siguientes datos para recibir la
                   factura:
                 </h2>
@@ -117,7 +117,7 @@ const Checkout = () => {
                   name="telephone"
                   required
                   onChange={inputDatos}
-                  placeholder="Teléfono (insertar como mínimo 7 dígitos)"
+                  placeholder="Teléfono"
                 />
                 <input
                   className="px-2 focus:outline-1 focus:ring-white border-2 border-zinc-300 placeholder-gray-600 py-4 w-full font-bold text-sm text-gray-600 tracking-wide leading-normal font-fredericka"
@@ -137,32 +137,32 @@ const Checkout = () => {
                   onChange={inputDatos}
                   placeholder="Confirmar e-mail"
                 />
+                {buyer.name &&
+                buyer.surname &&
+                buyer.telephone &&
+                buyer.email === buyer.emailConfirm &&
+                telephoneRegex.test(buyer.telephone) &&
+                emailRegex.test(buyer.email, buyer.emailConfirm) ? (
+                  // Botón habilitado
+                  <input
+                    onClick={() => {
+                      saveOrder();
+                      setShowModal(true);
+                    }}
+                    className="btn text-base font-bold select-none rounded w-full text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white transition-all duration-500 text-center py-3 cursor-pointer mt-6 mb-3 font-fredericka"
+                    type="submit"
+                    value="Proceder al pago"
+                  />
+                ) : (
+                  // Botón deshabilitado
+                  <input
+                    className="text-base font-bold  select-none rounded w-full text-white bg-zinc-900 text-center py-3 mt-6 mb-3 font-fredericka"
+                    type="submit"
+                    value="Favor de llenar los datos"
+                    disabled
+                  />
+                )}
               </form>
-              {buyer.name &&
-              buyer.surname &&
-              buyer.telephone &&
-              buyer.email === buyer.emailConfirm &&
-              telephoneRegex.test(buyer.telephone) &&
-              emailRegex.test(buyer.email, buyer.emailConfirm) ? (
-                // Botón habilitado
-                <input
-                  onClick={() => {
-                    saveOrder();
-                    setShowModal(true);
-                  }}
-                  className="btn text-base font-bold tracking-wider leading-normal select-none focus:outline-none text-white bg-zinc-900 focus:ring-transparent w-full md:w-2/4 mx-auto hover:text-zinc-900 hover:bg-white rounded transition-all duration-500 text-center py-3 cursor-pointer mt-6 mb-3 font-fredericka"
-                  type="submit"
-                  value="Proceder al pago"
-                />
-              ) : (
-                // Botón deshabilitado
-                <input
-                  className="text-base font-bold tracking-wider leading-normal select-none focus:outline-none rounded w-full md:w-2/4 mx-auto text-white bg-zinc-900 focus:ring-transparent text-center py-3 mt-6 mb-3 font-fredericka"
-                  type="submit"
-                  value="Proceder al pago"
-                  disabled
-                />
-              )}
             </div>
           </div>
         </div>

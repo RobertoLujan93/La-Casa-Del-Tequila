@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="text-center bg-white text-zync-900">
       <div className="w-full pt-6">
         {/* Copyright */}
-        <div className="text-center text-lg mb-2 text-zinc-900 font-semibold font-fredericka">
+        <div className="text-center text-base mb-2 text-zinc-900 font-semibold font-fredericka">
           © 2022 Copyright: Roberto Ariel Luján Gutiérrez
         </div>
         <hr className="border-zinc-900 w-3/4 mx-auto" />

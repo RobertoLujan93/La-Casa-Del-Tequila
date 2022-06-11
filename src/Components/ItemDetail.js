@@ -31,12 +31,20 @@ const ItemDetail = (props) => {
           <div className="flex justify-center">
             {/* Habilitar el botón para ir al carrito */}
             {terminar ? (
+              <div className="flex justify-evenly flex-row">
               <Link
                 to="/cart"
-                className="btn my-3 text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white text-xs font-bold rounded transition-all duration-500"
+                className="btn my-5 md:my-3 lg:my-3 text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white text-xs font-bold rounded transition-all duration-500 mr-5 capitalize md:uppercase lg:uppercase"
               >
-                Terminar Compra
+                Ver carrito
               </Link>
+              <Link
+              to="/"
+              className="btn my-5 md:my-3 lg:my-3 text-white bg-zinc-900 hover:text-zinc-900 hover:bg-white text-xs font-bold rounded transition-all duration-500 capitalize md:uppercase lg:uppercase"
+            >
+              Seguir comprando
+            </Link>
+            </div>
             ) : (
               <ItemCount stock={stock} initial={1} onAdd={onAdd} />
             )}

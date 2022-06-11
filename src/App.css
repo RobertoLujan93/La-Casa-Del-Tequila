@@ -14,6 +14,10 @@
   text-shadow: 0 0 0.05em #fff, 0 0 0.2em snow, 0 0 0.3em #f8f8ff;
 }
 
+.effect-arrow {
+  text-shadow: 0 0 0.01em #000000, 0 0 0.1em snow, 0 0 0.1em #1a1a1a;
+}
+
 /* Effect links navbar */
 .effect {
   color: #212121;

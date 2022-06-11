@@ -6,7 +6,7 @@ const Navbar = () => {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="drop-shadow-lg lg:sticky flex flex-wrap items-center justify-between p-6 bg-white relative z-50">
+    <div className="lg:sticky flex flex-wrap items-center justify-between p-6 bg-white relative z-50">
       <div className="block md:hidden z-auto cursor-pointer">
         <button
           onClick={() => setOpen(!open)}
