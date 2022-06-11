@@ -37,7 +37,7 @@ const Cart = () => {
           </h2>
           <table className="mx-auto w-full">
             <thead>
-              <tr className="border-b border-gray-200">
+              <tr className="border-b border-zinc-900">
                 <th className="items-center text-zinc-900 text-xs md:text-lg lg:text-lg">
                   Producto
                 </th>
@@ -57,7 +57,7 @@ const Cart = () => {
             </thead>
             {cart.map((item) => (
               <thead key={item.id}>
-                <tr className="border-b border-gray-200">
+                <tr className="border-b border-zinc-900">
                   <th className="flex flex-col items-center ">
                     <img
                       className="h-36 w-36"
