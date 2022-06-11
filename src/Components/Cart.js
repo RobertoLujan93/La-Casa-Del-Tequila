@@ -82,7 +82,7 @@ const Cart = () => {
                   <th>
                     <button
                       className="text-zinc-900 text-sm md:text-lg lg:text-lg"
-                      onClick={() => removeItem()}
+                      onClick={() => removeItem(item)}
                     >
                       <RiDeleteBinFill />
                     </button>
